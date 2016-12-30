@@ -12,7 +12,7 @@ import Foundation
  * Which return a debug String.
  *
  */
-protocol SCDebuggable {
+public protocol SCDebuggable {
     func debug() -> String
 }
 
@@ -23,7 +23,7 @@ protocol SCDebuggable {
  * and print that string in the console
  *
  */
-func debug<A: SCDebuggable> (_ obj: A) {
+public func debug<A: SCDebuggable> (_ obj: A) {
     print(obj.debug())
 }
 
@@ -33,7 +33,7 @@ func debug<A: SCDebuggable> (_ obj: A) {
  * This method require an array of any kind of items (class, struct, etc.) which conforms to the SCDebuggable
  * protocol, then print in the console all the string returned by the debug() method
  */
-func debug<A: SCDebuggable> (_ objs: [A]) {
+public func debug<A: SCDebuggable> (_ objs: [A]) {
     for obj in objs { print(obj.debug()) }
 }
 
@@ -44,6 +44,6 @@ func debug<A: SCDebuggable> (_ objs: [A]) {
  * The type of the item will be printed in the console.
  *
  */
-func debug<A> (_ obj: A) {
+public func debug<A> (_ obj: A) {
     print(type(of: obj))
 }
